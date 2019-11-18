@@ -33,7 +33,7 @@ exports.onCreateNode = ({
         } = actions;
 
         let content = node.body.value;
-        const inlineImageRegExp = /\(\/sites[^)]+\)/gi;
+        const inlineImageRegExp = /\"\/sites[^\"]+\"/gi;
         const nodeImages = content.match(inlineImageRegExp);
         if (nodeImages) {
             const nodes = getNodes();
